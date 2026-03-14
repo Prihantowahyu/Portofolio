@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body class="login-page">
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">&lt;Dev/&gt;</a>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="login.html" class="active">Login</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <main class="login-main">
+        <div class="login-card">
+            <div class="login-window">
+                <div class="window-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="window-title">Halaman Login</span>
+                </div>
+                <div class="login-form-wrap">
+                    <h1 class="login-title">Login</h1>
+                    <p class="login-subtitle">Masuk ke akun Anda</p>
+
+                    <form id="loginForm" class="login-form">
+                        <div class="form-group">
+                            <label for="username">Username atau Email</label>
+                            <div class="input-with-icon">
+                                <i class="fa-solid fa-user input-icon"></i>
+                                <input type="text" id="username" name="username" placeholder="Masukkan username/email" required autocomplete="username">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-with-icon">
+                                <i class="fa-solid fa-lock input-icon"></i>
+                                <input type="password" id="password" name="password" placeholder="Masukkan password" required autocomplete="current-password">
+                            </div>
+                        </div>
+                        <div class="form-options">
+                            <label class="remember-me">
+                                <input type="checkbox" name="remember">
+                                <span>Ingat saya</span>
+                            </label>
+                            <a href="#" class="forgot-link">Lupa password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-login">Masuk</button>
+                        <p class="login-footer">
+                            Belum punya akun? <a href="#">Daftar</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            // Demo: tampilkan alert (bisa diganti dengan fetch ke backend)
+            console.log('Login attempt:', { username, password });
+            alert('Login berhasil! (Demo - belum tersambung ke backend)');
+            // window.location.href = 'index.html'; // Redirect setelah login
+        });
+    </script>
+</body>
+</html>
